@@ -2,6 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15A279b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="IGC-RI-G5g">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Table View Controller-->
@@ -46,19 +48,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Bt-Uh-9Gk">
-                                <rect key="frame" x="124" y="316" width="127" height="36"/>
+                                <rect key="frame" x="71" y="154" width="232" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Print that post"/>
+                                <state key="normal" title="Get latest cheeky secret…"/>
                                 <connections>
                                     <action selector="pressedButton:" destination="IGC-RI-G5g" eventType="touchUpInside" id="ULw-Nw-vqm"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="..." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pg5-rz-VYJ">
+                                <rect key="frame" x="36" y="267" width="303" height="133"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pg5-rz-VYJ" firstAttribute="height" secondItem="auT-ln-bgZ" secondAttribute="height" multiplier="0.2" id="F62-yt-lHp"/>
+                            <constraint firstItem="pg5-rz-VYJ" firstAttribute="leading" secondItem="auT-ln-bgZ" secondAttribute="leadingMargin" constant="20" id="LSw-P9-Fu6"/>
+                            <constraint firstItem="pg5-rz-VYJ" firstAttribute="centerX" secondItem="auT-ln-bgZ" secondAttribute="centerX" id="chH-gB-Qx2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pg5-rz-VYJ" secondAttribute="trailing" constant="20" id="moH-AY-Eul"/>
+                            <constraint firstItem="pg5-rz-VYJ" firstAttribute="centerY" secondItem="auT-ln-bgZ" secondAttribute="centerY" id="xY7-pq-3iP"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="button" destination="8Bt-Uh-9Gk" id="VBz-En-MT4"/>
+                        <outlet property="secretView" destination="pg5-rz-VYJ" id="xF8-ra-PLh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qiu-bi-o2F" userLabel="First Responder" sceneMemberID="firstResponder"/>

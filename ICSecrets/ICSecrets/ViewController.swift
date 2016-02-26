@@ -11,6 +11,8 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 
 class ViewController: UIViewController, FBSDKLoginButtonDelegate {
+  
+  @IBOutlet weak var secretView: UITextView!
 
   @IBOutlet weak var button: UIButton!
   
@@ -67,7 +69,15 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
         
         var dataDict: AnyObject = result!.objectForKey("data")!
         
-        print(dataDict)
+        print(dataDict[0]["message"])
+        
+        
+        if let post = dataDict[0] as? [String: AnyObject] {
+          if let message = post["message"] as? String {
+              self.secretView.text = message
+          }
+        }
+        
         
        // let strSecr = result!.objectForKey("message")!
        // print(strSecr)
