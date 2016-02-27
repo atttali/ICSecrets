@@ -13,21 +13,26 @@ import FBSDKLoginKit
 class ViewController: UIViewController, FBSDKLoginButtonDelegate {
   
   @IBOutlet weak var secretView: UITextView!
-
+  @IBOutlet weak var nextButton: UIButton!
   @IBOutlet weak var button: UIButton!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    //      let loginManager = FBSDKLoginManager()
-    //      loginManager.logOut()
+    nextButton.tag = 0
     
-      }
+  }
+  
+  override func prefersStatusBarHidden() -> Bool {
+    return true
+  }
+  
   @IBAction func pressedButton(sender: AnyObject) {
     if (FBSDKAccessToken.currentAccessToken() != nil)
     {
+      nextButton.tag = 0
       print("I'm logged in already!")
-      printStuff()
+      printStuff(nextButton.tag)
     }
     else
     {
@@ -41,16 +46,21 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
   }
   
   
-  func printStuff() {
+  @IBAction func next(sender: AnyObject) {
+    nextButton.tag++
+    printStuff(nextButton.tag)
+  }
+  
+  func printStuff(number: Int) {
     var Request : FBSDKGraphRequest
     
    // print("\(FBSDKAccessToken.currentAccessToken())")
     
-    var accessToken = String(format:"%@", FBSDKAccessToken.currentAccessToken().tokenString) as String
+  //  var accessToken = String(format:"%@", FBSDKAccessToken.currentAccessToken().tokenString) as String
     
    // print("\(accessToken)")
     
-    var parameters1 = ["access_token":FBSDKAccessToken.currentAccessToken().tokenString]
+    let parameters1 = ["access_token":FBSDKAccessToken.currentAccessToken().tokenString]
     
     
     Request  = FBSDKGraphRequest(graphPath:"ImperialCollegeSecrets/posts", parameters:parameters1, HTTPMethod:"GET")
@@ -67,12 +77,16 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
       {
       // print("Result: \(result)")
         
-        var dataDict: AnyObject = result!.objectForKey("data")!
+        let dataDict: AnyObject = result!.objectForKey("data")!
+        let paging: AnyObject = result!.objectForKey("paging")!
         
-        print(dataDict[0]["message"])
+        let num = number%25
         
+//        print(dataDict[num]["message"])
         
-        if let post = dataDict[0] as? [String: AnyObject] {
+        print(paging["next"])
+        
+        if let post = dataDict[num] as? [String: AnyObject] {
           if let message = post["message"] as? String {
               self.secretView.text = message
           }

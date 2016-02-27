@@ -16,6 +16,7 @@
 		DE015C6E1C7FCBD700FF5C97 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE015C6D1C7FCBD700FF5C97 /* FBSDKCoreKit.framework */; };
 		DE015C701C7FD45300FF5C97 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE015C6F1C7FD45300FF5C97 /* FBSDKLoginKit.framework */; };
 		DE015C721C7FD65A00FF5C97 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE015C711C7FD65A00FF5C97 /* Bolts.framework */; };
+		DE015C781C8062E200FF5C97 /* SecretTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE015C771C8062E200FF5C97 /* SecretTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		DE015C6D1C7FCBD700FF5C97 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "../../../Downloads/FacebookSDKs-iOS-20160210/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
 		DE015C6F1C7FD45300FF5C97 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		DE015C711C7FD65A00FF5C97 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = FacebookSDK/Bolts.framework; sourceTree = "<group>"; };
+		DE015C771C8062E200FF5C97 /* SecretTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecretTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				DE015C571C7E08B900FF5C97 /* AppDelegate.swift */,
 				DE015C591C7E08B900FF5C97 /* ViewController.swift */,
 				DE015C5B1C7E08B900FF5C97 /* Main.storyboard */,
+				DE015C771C8062E200FF5C97 /* SecretTableViewController.swift */,
 				DE015C611C7E08B900FF5C97 /* Assets.xcassets */,
 				DE015C631C7E08B900FF5C97 /* LaunchScreen.storyboard */,
 				DE015C661C7E08B900FF5C97 /* Info.plist */,
@@ -161,6 +164,7 @@
 				DE015C5A1C7E08B900FF5C97 /* ViewController.swift in Sources */,
 				DE015C581C7E08B900FF5C97 /* AppDelegate.swift in Sources */,
 				DE015C601C7E08B900FF5C97 /* ICSecrets.xcdatamodeld in Sources */,
+				DE015C781C8062E200FF5C97 /* SecretTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
