@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DE015C581C7E08B900FF5C97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE015C571C7E08B900FF5C97 /* AppDelegate.swift */; };
-		DE015C5A1C7E08B900FF5C97 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE015C591C7E08B900FF5C97 /* ViewController.swift */; };
+		DE015C5A1C7E08B900FF5C97 /* FBLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE015C591C7E08B900FF5C97 /* FBLoginVC.swift */; };
 		DE015C5D1C7E08B900FF5C97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE015C5B1C7E08B900FF5C97 /* Main.storyboard */; };
 		DE015C601C7E08B900FF5C97 /* ICSecrets.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DE015C5E1C7E08B900FF5C97 /* ICSecrets.xcdatamodeld */; };
 		DE015C621C7E08B900FF5C97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE015C611C7E08B900FF5C97 /* Assets.xcassets */; };
@@ -22,7 +22,7 @@
 /* Begin PBXFileReference section */
 		DE015C541C7E08B900FF5C97 /* ICSecrets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ICSecrets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE015C571C7E08B900FF5C97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DE015C591C7E08B900FF5C97 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DE015C591C7E08B900FF5C97 /* FBLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBLoginVC.swift; sourceTree = "<group>"; };
 		DE015C5C1C7E08B900FF5C97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DE015C5F1C7E08B900FF5C97 /* ICSecrets.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ICSecrets.xcdatamodel; sourceTree = "<group>"; };
 		DE015C611C7E08B900FF5C97 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -69,7 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				DE015C571C7E08B900FF5C97 /* AppDelegate.swift */,
-				DE015C591C7E08B900FF5C97 /* ViewController.swift */,
+				DE015C591C7E08B900FF5C97 /* FBLoginVC.swift */,
 				DE015C5B1C7E08B900FF5C97 /* Main.storyboard */,
 				DE015C771C8062E200FF5C97 /* SecretTableViewController.swift */,
 				DE015C611C7E08B900FF5C97 /* Assets.xcassets */,
@@ -161,7 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE015C5A1C7E08B900FF5C97 /* ViewController.swift in Sources */,
+				DE015C5A1C7E08B900FF5C97 /* FBLoginVC.swift in Sources */,
 				DE015C581C7E08B900FF5C97 /* AppDelegate.swift in Sources */,
 				DE015C601C7E08B900FF5C97 /* ICSecrets.xcdatamodeld in Sources */,
 				DE015C781C8062E200FF5C97 /* SecretTableViewController.swift in Sources */,

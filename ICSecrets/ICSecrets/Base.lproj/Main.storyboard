@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15A279b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="90a-gq-J6J">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15A279b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="IGC-RI-G5g">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Secret Table View Controller-->
@@ -21,7 +20,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IC SECRETS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xpf-Ze-BYD">
-                                    <rect key="frame" x="67.5" y="21" width="240.5" height="40"/>
+                                    <rect key="frame" x="67" y="21" width="240.5" height="40"/>
                                     <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="40"/>
                                     <color key="textColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -113,10 +112,10 @@
             </objects>
             <point key="canvasLocation" x="224.5" y="562.5"/>
         </scene>
-        <!--View Controller-->
+        <!--LoginVC-->
         <scene sceneID="VOf-rh-BHh">
             <objects>
-                <viewController id="IGC-RI-G5g" customClass="ViewController" customModule="ICSecrets" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="IGC-RI-G5g" customClass="FBLoginVC" customModule="ICSecrets" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AUW-03-85c"/>
                         <viewControllerLayoutGuide type="bottom" id="SRv-co-aWy"/>
@@ -125,47 +124,61 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Bt-Uh-9Gk">
-                                <rect key="frame" x="71" y="154" width="232" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IC SECRETS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ljv-FH-1Sd">
+                                <rect key="frame" x="67" y="253" width="240.5" height="40"/>
+                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="40"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4K-Lf-Oeu" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="67" y="313.5" width="240.5" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="vF0-J4-8Mi"/>
+                                </constraints>
+                                <state key="normal" title="FB"/>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Bt-Uh-9Gk">
+                                <rect key="frame" x="71" y="20" width="232" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Get latest cheeky secret…"/>
                                 <connections>
                                     <action selector="pressedButton:" destination="IGC-RI-G5g" eventType="touchUpInside" id="ULw-Nw-vqm"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dst-Le-gQO">
-                                <rect key="frame" x="171" y="425" width="32" height="30"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dst-Le-gQO">
+                                <rect key="frame" x="171" y="175" width="32" height="30"/>
                                 <state key="normal" title="Next"/>
                                 <connections>
                                     <action selector="next:" destination="IGC-RI-G5g" eventType="touchUpInside" id="cXX-pj-BjG"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="..." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pg5-rz-VYJ">
-                                <rect key="frame" x="36" y="267" width="303" height="133"/>
+                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="..." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pg5-rz-VYJ">
+                                <rect key="frame" x="36" y="85" width="303" height="51"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.12941176470588237" green="0.18431372549019609" blue="0.24313725490196078" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="pg5-rz-VYJ" firstAttribute="height" secondItem="auT-ln-bgZ" secondAttribute="height" multiplier="0.2" id="F62-yt-lHp"/>
-                            <constraint firstItem="pg5-rz-VYJ" firstAttribute="leading" secondItem="auT-ln-bgZ" secondAttribute="leadingMargin" constant="20" id="LSw-P9-Fu6"/>
-                            <constraint firstItem="pg5-rz-VYJ" firstAttribute="centerX" secondItem="auT-ln-bgZ" secondAttribute="centerX" id="chH-gB-Qx2"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="pg5-rz-VYJ" secondAttribute="trailing" constant="20" id="moH-AY-Eul"/>
-                            <constraint firstItem="pg5-rz-VYJ" firstAttribute="centerY" secondItem="auT-ln-bgZ" secondAttribute="centerY" id="xY7-pq-3iP"/>
+                            <constraint firstItem="c4K-Lf-Oeu" firstAttribute="width" secondItem="Ljv-FH-1Sd" secondAttribute="width" id="0Di-gR-fA1"/>
+                            <constraint firstItem="c4K-Lf-Oeu" firstAttribute="centerX" secondItem="auT-ln-bgZ" secondAttribute="centerX" id="97s-Ll-V0P"/>
+                            <constraint firstItem="c4K-Lf-Oeu" firstAttribute="top" secondItem="Ljv-FH-1Sd" secondAttribute="bottom" constant="20" id="VuA-vM-ga9"/>
+                            <constraint firstItem="c4K-Lf-Oeu" firstAttribute="centerY" secondItem="auT-ln-bgZ" secondAttribute="centerY" id="X66-3Q-lrn"/>
+                            <constraint firstItem="Ljv-FH-1Sd" firstAttribute="centerX" secondItem="auT-ln-bgZ" secondAttribute="centerX" id="asI-OE-YpJ"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="button" destination="8Bt-Uh-9Gk" id="VBz-En-MT4"/>
+                        <outlet property="loginView" destination="c4K-Lf-Oeu" id="1F6-V0-DfE"/>
                         <outlet property="nextButton" destination="Dst-Le-gQO" id="S6G-Pe-vMT"/>
                         <outlet property="secretView" destination="pg5-rz-VYJ" id="xF8-ra-PLh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qiu-bi-o2F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="642.5" y="411.5"/>
+            <point key="canvasLocation" x="722.5" y="562.5"/>
         </scene>
     </scenes>
 </document>

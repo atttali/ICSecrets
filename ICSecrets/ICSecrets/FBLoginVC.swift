@@ -10,15 +10,17 @@ import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
 
-class ViewController: UIViewController, FBSDKLoginButtonDelegate {
+class FBLoginVC: UIViewController, FBSDKLoginButtonDelegate {
   
   @IBOutlet weak var secretView: UITextView!
   @IBOutlet weak var nextButton: UIButton!
   @IBOutlet weak var button: UIButton!
+  @IBOutlet weak var loginView: FBSDKLoginButton!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    updateButton()
     nextButton.tag = 0
     
   }
@@ -36,9 +38,9 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
     }
     else
     {
-      let loginView : FBSDKLoginButton = FBSDKLoginButton()
-      self.view.addSubview(loginView)
-      loginView.center = CGPointMake(self.view.center.x, self.view.center.y + 80)
+//      let loginView : FBSDKLoginButton = FBSDKLoginButton()
+//      self.view.addSubview(loginView)
+//      loginView.center = CGPointMake(self.view.center.x, self.view.center.y + 80)
       loginView.readPermissions = ["public_profile", "email", "user_friends", "user_posts"]
       loginView.delegate = self
     }
@@ -118,15 +120,36 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
       // should check if specific permissions missing
       if result.grantedPermissions.contains("email")
       {
-        // Do work
+        updateButton()
       }
     }
   }
   
   func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
     print("User Logged Out")
+    updateButton()
   }
 
+  func isLoggedIn() -> Bool {
+    if FBSDKAccessToken.currentAccessToken() != nil {
+      return true
+    }
+    return false
+  }
+  
+  func updateButton() {
+    if isLoggedIn()
+    {
+      let titleText = NSMutableAttributedString(string: "Log out", attributes: [ NSFontAttributeName: UIFont(name: "Courier", size: 14.0)!, NSForegroundColorAttributeName: UIColor.whiteColor()])
+      loginView.setAttributedTitle(titleText, forState: UIControlState.Normal)
+    }
+    else
+    {
+      let titleText = NSMutableAttributedString(string: "Log in", attributes: [ NSFontAttributeName: UIFont(name: "Courier", size: 14.0)! ])
+      loginView.setAttributedTitle(titleText, forState: UIControlState.Normal)
+    }
+
+  }
 
 }
 
